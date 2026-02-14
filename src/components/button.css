@@ -1,0 +1,57 @@
+/**
+Website colours (3 cool and collected):
+Main: #003135
+Button: #024950
+
+Subtle:
+Active: #0FA4AF
+Alt: #AFDDE5
+
+*/
+
+.navButton {
+    width: 150px;
+    height: 45px;
+    padding: 10px;
+
+    border: none;
+
+    background-color: #003135;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navButton:hover {
+    border: 2px solid #FFFFFF;
+    background-color: #1a3f42;
+}
+
+.proceedButton {
+    width: 150px;
+    height: 45px;
+    padding: 10px;
+
+    border-radius: 8px;
+    border: none;
+
+    background-color: #0f4e50;
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.2s;
+}
+
+.proceedButton:hover {
+    background-color: #22494b;
+}
+
+.proceedButton:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+}

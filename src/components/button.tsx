@@ -1,16 +1,20 @@
-type ButtonProps = {
-    text: string
+import React from "react";
+import "../App.css";
+import "./button.css";
+
+interface ButtonProps {
+    className: string;
+    label: string;
+    onClick: () => void;
     disabled?: boolean;
-    onClick?: () => void;
-    
 }
 
-function Button({text, disabled = false, onClick}: ButtonProps) {
-    return(
-        <button onClick={onClick} disabled={disabled}>
-            {text}
+const Button: React.FC<ButtonProps> = ({className="proceedButton", label="Label", onClick, disabled=false}) => {
+    return (
+        <button className={className} onClick={onClick} disabled={disabled}>
+                {label}
         </button>
-    )
+    );
 }
 
-export default Button
+export default Button;

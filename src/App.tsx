@@ -9,8 +9,9 @@ function App() {
   return (
     <div>
       <h1>Welcome to A-Store</h1>
-      <Button text='Click Me!' onClick={handleClick}/>
-      <Button text='Disabled' onClick={handleClick} disabled={true} />
+      <Button className="proceedButton" label="Click Me!" onClick={handleClick}/>
+      <Button className="proceedButton" label="Disabled" onClick={handleClick} disabled={true}/>
+      <Button className="navButton" label="Products" onClick={handleClick}/>
     </div>
   )
 }
