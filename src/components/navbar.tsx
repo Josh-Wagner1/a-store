@@ -1,4 +1,5 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 import "../App.css";
 import "./navbar.css";
 import Button from "./button";
@@ -7,11 +8,9 @@ interface NavProps {
     cart?: number;
 }
 
-const handleClick = () => {
-    alert("Button clicked!");
-};
-
 const NavBar: React.FC<NavProps> = ({cart=0}) => {
+    const navigate = useNavigate();
+
     return (
         <div className="navbar">
             <div className="left">
@@ -20,10 +19,10 @@ const NavBar: React.FC<NavProps> = ({cart=0}) => {
             </div>
 
             <div className="centre">
-                <Button className="navButton" label="Home" onClick={handleClick}/>
-                <Button className="navButton" label="Products" onClick={handleClick}/>
-                <Button className="navButton" label="About" onClick={handleClick}/>
-                <Button className="navButton" label="Contact" onClick={handleClick}/>
+                <Button className="navButton" label="Home" onClick={() => navigate("/")}/>
+                <Button className="navButton" label="Products" onClick={() => navigate("/products")}/>
+                <Button className="navButton" label="About" onClick={() => navigate("/about")}/>
+                <Button className="navButton" label="Contact" onClick={() => navigate("/contact")}/>
             </div>
             
             <div className="right">

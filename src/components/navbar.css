@@ -31,10 +31,10 @@
     flex: 1;
     justify-content: right;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     cursor: pointer;
 }
 
 .material-symbols-outlined {
-    font-size: 40px;
+    font-size: 36px;
 }

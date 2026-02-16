@@ -1,36 +1,21 @@
-import "./App.css"
-import Button from "./components/button"
-import Card from "./components/card"
-import NavBar from "./components/navbar"
+import {Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
-  const handleClick = () => {
-    alert("Button clicked!");
-  };
-
+  
   return (
-    <div>
-      <>
-        <NavBar />
-      </>
-      
-      <div>
-        <h1>Welcome to A-Store</h1>
-        <Button className="proceedButton" label="Click Me!" onClick={handleClick}/>
-        <Button className="proceedButton" label="Disabled" onClick={handleClick} disabled={true}/>
-        <Button className="navButton" label="Products" onClick={handleClick}/>
-      </div>
-
-      <div>
-        <Card title="Title" subtitle="Subtitle" content="Content"></Card>
-        <Card title="Title2" subtitle="Subtitle2" content="Content2"></Card>
-      </div>
-
-      <div>
-        <Card title="Title2" subtitle="Subtitle2" content="Content2"></Card>
-      </div>
-    </div>
-  )
+    <>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/products" element={<Products/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+      </Routes>
+    </>
+  );
 }
 
 export default App
