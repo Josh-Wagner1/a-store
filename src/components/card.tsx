@@ -1,4 +1,3 @@
-import React from "react";
 import "./card.css";
 
 interface CardProps {
@@ -7,7 +6,7 @@ interface CardProps {
     content: string
 }
 
-const Card: React.FC<CardProps> = ({title = "Title", subtitle = "Subtitle", content = "Content"}) => {
+export default function Card({title = "Title", subtitle = "Subtitle", content = "Content"}: CardProps) {
     return (
         <div className="card">
             <h2>{title}</h2>
@@ -16,5 +15,3 @@ const Card: React.FC<CardProps> = ({title = "Title", subtitle = "Subtitle", cont
         </div>
     );
 }
-
-export default Card;

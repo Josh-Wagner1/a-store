@@ -1,4 +1,3 @@
-import React from "react";
 import {useNavigate} from "react-router-dom";
 import "../App.css";
 import "./navbar.css";
@@ -8,7 +7,7 @@ interface NavProps {
     cart?: number;
 }
 
-const NavBar: React.FC<NavProps> = ({cart=0}) => {
+export default function NavBar({cart = 0}: NavProps) {
     const navigate = useNavigate();
 
     return (
@@ -33,5 +32,3 @@ const NavBar: React.FC<NavProps> = ({cart=0}) => {
         </div>
     );
 }
-
-export default NavBar;

@@ -1,4 +1,3 @@
-import React from "react";
 import "../App.css";
 import "./button.css";
 
@@ -9,12 +8,10 @@ interface ButtonProps {
     disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({className="proceedButton", label="Label", onClick, disabled=false}) => {
+export default function Button({className="proceedButton", label="Label", onClick, disabled=false}: ButtonProps) {
     return (
         <button className={className} onClick={onClick} disabled={disabled}>
                 {label}
         </button>
     );
 }
-
-export default Button;
