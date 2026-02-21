@@ -34,7 +34,7 @@ function Home() {
         </div>
         
         <div className="container">
-          <Slideshow images={pics} delay={7000}/>
+          <Slideshow images={pics} delay={5000}/>
         </div>
       </div>
     </body>

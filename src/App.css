@@ -1,13 +1,14 @@
 /**
-Website colours (3 cool and collected):
+Website colours:
 Main: #003135
 Button: #024950
 
 Subtle:
 Active: #0FA4AF
 Alt: #AFDDE5
-
 */
+
+/** Base Settings: */
 
 body {
     font-family: Arial, monospace;
@@ -32,4 +33,23 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
+}
+
+/** Font Settings */
+
+span.size-36 {
+  font-size: 40px;
+  font-variation-settings: 'OPSZ' 36;
+}
+
+span.size-96 {
+  font-size: 96px;
+  font-variation-settings: 'OPSZ' 96;
+}
+
+.arrow-hover:hover {
+    transition: 0.2s;
+    background-color: #b1b1b1;
+    cursor: pointer;
 }

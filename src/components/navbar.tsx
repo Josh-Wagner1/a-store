@@ -13,8 +13,8 @@ export default function NavBar({cart = 0}: NavProps) {
     return (
         <div className="navbar">
             <div className="left">
-                <span className="material-symbols-outlined">slab_serif</span>
-                <h2>-Store</h2>
+                <span className="material-symbols-outlined size-36" onClick={() => navigate("/")}>slab_serif</span>
+                <h2 onClick={() => navigate("/")}>-Store</h2>
             </div>
 
             <div className="centre">
@@ -25,7 +25,7 @@ export default function NavBar({cart = 0}: NavProps) {
             </div>
             
             <div className="right">
-                <span className="material-symbols-outlined">shopping_cart</span>
+                <span className="material-symbols-outlined size-36 arrow-hover">shopping_cart</span>
                 <h2>{cart}</h2>
                 <h2>Cart</h2>
             </div>
