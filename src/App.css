@@ -36,6 +36,14 @@ p {
     transition: 0.2s;
 }
 
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-left: 20%;
+}
+
 /** Font Settings */
 
 span.size-36 {
@@ -50,6 +58,6 @@ span.size-96 {
 
 .arrow-hover:hover {
     transition: 0.2s;
-    background-color: #b1b1b1;
+    background-color: #e7e7e7;
     cursor: pointer;
 }
