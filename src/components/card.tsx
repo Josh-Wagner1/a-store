@@ -9,7 +9,7 @@ interface CardProps {
 
 export default function Card({image, title = "Title", subtitle = "Subtitle", content = "Content"}: CardProps) {
     return (
-        <div className="card">
+        <div className="card accent">
             <img src={image} alt="Image" className="image"/>
             <h2>{title}</h2>
             <h3>{subtitle}</h3>

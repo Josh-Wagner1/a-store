@@ -8,7 +8,11 @@ function About() {
         <NavBar/>
       </>
 
-      <h1>About Us</h1>
+      <section className="section">
+        <h1 className="title">About Us</h1>
+
+        
+      </section>
     </div>
   )
 }

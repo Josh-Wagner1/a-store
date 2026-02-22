@@ -27,8 +27,8 @@ export default function Slideshow({images, delay=3000}: SlideshowProps) {
     }, [index, delay, images.length]);
 
     return (
-        <div className="container">
-            <div className="arrow-hover">
+        <div className="container container-v-center">
+            <div className="arrow">
                 <span className="material-symbols-outlined size-96" onClick={prevImg}>chevron_left</span>
             </div>
 
@@ -38,7 +38,7 @@ export default function Slideshow({images, delay=3000}: SlideshowProps) {
                 ))}
             </div>
             
-            <div className="arrow-hover">
+            <div className="arrow">
                 <span className="material-symbols-outlined size-96" onClick={nextImg}>chevron_right</span>
             </div>
         </div>

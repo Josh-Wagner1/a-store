@@ -13,28 +13,28 @@ function Home() {
   ];
 
   return (
-    <body>
+    <div>
       <>
         <NavBar />
       </>
-      
-      <div>
-        <h2 className="section">Today's Best Sellers:</h2>
+
+      <section className="section">
+        <h1 className="title">Today's Best Sellers:</h1>
+
         <div className="container">
           <Slideshow images={pics} delay={5000}/>
         </div>
 
-        <h2 className="section">Popular:</h2>
+        <h1 className="title">Popular:</h1>
+
         <div className="container">
           <Card image="/images/Apple.jpg" title="Title" subtitle="Subtitle" content="Content"/>
           <Card image="/images/Banana.jpg" title="Title2" subtitle="Subtitle2" content="Content2"/>
           <Card image="/images/Carrot.jpg" title="Title3" subtitle="Subtitle3" content="Content3"/>
           <Card image="/images/Carrot.jpg" title="Title4" subtitle="Subtitle4" content="Content4"/>
         </div>
-        
-        
-      </div>
-    </body>
+      </section>
+    </div>
   )
 }
 
