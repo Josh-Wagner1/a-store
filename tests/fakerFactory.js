@@ -1,6 +1,6 @@
 const Client = require("./client.js");
 const Order  = require("./order.js");
-const { faker } = require('@faker-js/faker');
+const { faker } = require("@faker-js/faker");
 
 /**
  * Fake client

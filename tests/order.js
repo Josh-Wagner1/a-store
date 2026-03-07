@@ -8,4 +8,4 @@ class Order {
     }
 }
 
-module.exports = new Order();
+module.exports = Order;

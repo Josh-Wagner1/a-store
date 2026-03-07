@@ -1,5 +1,6 @@
 // Old python stack algorithm converted into JS
 class StackFrontier {
+    
     constructor() {
         this.frontier = [];
     }
@@ -8,53 +9,54 @@ class StackFrontier {
         this.frontier.push(order);
     }
 
-    contains_state(state) {
-        return this.frontier.some(node => node.state === state);
-    }
-
-    empty() {
-        return this.frontier.length === 0;
+    contains_state(orderId) {
+        return this.frontier.some(node => node.id === orderId);
     }
 
     remove() {
-        if (this.empty()) {
-            return Promise.reject(new Error("There are no orders"));
-        } else {
-            const node = this.frontier[this.frontier.length - 1];
-            this.frontier = this.frontier.slice(0, -1);
-            return node;
+        if (this.frontier.length === 0) {
+            return Promise.reject(new Error("There are no orders!"));
         }
+        return this.frontier.pop();
     }
 }
 
 // Old python priority queue algorithm converted into JS
 class PriorityQueueFrontier extends StackFrontier {
     add(newOrder) {
-        for (let i = 0; i < this.frontier.length; i++) {
-            const [priority, snode] = this.frontier[i];
+        // Checks and throws error if any of the values are empty
+        const hasEmptyValue = Object.values(newOrder).some(value => 
+            value === null || value === undefined || value === ""
+        );
 
-            if (newOrder[0] < priority) {
-                this.frontier.splice(i, 0, newItem);
+        if (hasEmptyValue) {
+            return Promise.reject(new Error("Order details are not complete!"));
+        }
+        
+        // Find the correct spot based on time poroperty
+        for (let i = 0; i < this.frontier.length; i++) {
+            const currentOrder = this.frontier[i];
+
+            // Sort based on time waiting
+            if (newOrder.time < currentOrder.time) {
+                this.frontier.splice(i, 0, newOrder);
                 return;
             }
         }
 
-        // Only triggers if new order goes at the end
+        // If it's the newest order seen so far, push it to the end
+        this.frontier.push(newOrder);
+
+        // Only triggers if new order is the lowest priorityt
         this.frontier.push(newOrder);
     }
 
-    contains_state(state) {
-        return this.frontier.some(node => node[1].state === state);
-    }
-
     remove() {
-        if (this.empty()) {
-            return Promise.reject(new Error("There are no orders"));
-        } else {
-            const node = this.frontier[0];
-            this.frontier = this.frontier.slice(1);
-            return node;
+        if (this.frontier.length === 0) {
+            return Promise.reject(new Error("There are no orders!"));
         }
+
+        return this.frontier.shift();
     }
 }
 
