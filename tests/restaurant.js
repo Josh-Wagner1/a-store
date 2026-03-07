@@ -7,6 +7,7 @@ class StackFrontier {
     
     add(order) {
         this.frontier.push(order);
+        return this.frontier;
     }
 
     contains_state(orderId) {
@@ -15,7 +16,7 @@ class StackFrontier {
 
     remove() {
         if (this.frontier.length === 0) {
-            return Promise.reject(new Error("There are no orders!"));
+            throw new Error("There are no orders!");
         }
         return this.frontier.pop();
     }
@@ -30,7 +31,7 @@ class PriorityQueueFrontier extends StackFrontier {
         );
 
         if (hasEmptyValue) {
-            return Promise.reject(new Error("Order details are not complete!"));
+            throw new Error("Order details are not complete!");
         }
         
         // Find the correct spot based on time poroperty
@@ -40,20 +41,18 @@ class PriorityQueueFrontier extends StackFrontier {
             // Sort based on time waiting
             if (newOrder.time < currentOrder.time) {
                 this.frontier.splice(i, 0, newOrder);
-                return;
+                return this.frontier;
             }
         }
 
-        // If it's the newest order seen so far, push it to the end
+        // If it's the newest order push it to the end
         this.frontier.push(newOrder);
-
-        // Only triggers if new order is the lowest priorityt
-        this.frontier.push(newOrder);
+        return this.frontier;
     }
 
     remove() {
         if (this.frontier.length === 0) {
-            return Promise.reject(new Error("There are no orders!"));
+            throw new Error("There are no orders!");
         }
 
         return this.frontier.shift();

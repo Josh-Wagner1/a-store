@@ -4,7 +4,7 @@ class Order {
         this.clientId = clientId;
         this.numItems = numItems;
         this.total = total;
-        this.time = time;
+        this.time = new Date(time);
     }
 }
 
