@@ -1,12 +1,11 @@
 class Order {
-    constructor(id, clientid, items, total, time, active) {
+    constructor({ id, clientId, numItems, total, time }) {
         this.id = id;
-        this.clientid = clientid;
-        this.items = items;
+        this.clientId = clientId;
+        this.numItems = numItems;
         this.total = total;
         this.time = time;
-        this.active = active;
     }
 } 
 
-module.exports = Order
+export { Order };

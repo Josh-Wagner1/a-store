@@ -1,11 +1,11 @@
 class Client {
-    constructor(id, name, phone, address, active) {
+    constructor({ id, username, phone, email, registeredAt }) {
         this.id = id;
-        this.name = name;
+        this.username = username;
         this.phone = phone;
-        this.address = address;
-        this.active = active;
+        this.email = email;
+        this.registeredAt = registeredAt;
     }
 } 
 
-module.exports = Client
+export { Client };
