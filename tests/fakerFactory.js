@@ -1,11 +1,11 @@
-import { Client } from "./client.js";
-import { Order } from "./order.js";
-import { faker } from "@faker-js/faker";
+const Client = require("./client.js");
+const Order  = require("./order.js");
+const { faker } = require('@faker-js/faker');
 
 /**
  * Fake client
 */
-function createClient(vals = {}) {
+module.exports.createClient = async (vals = {}) => {
     const defaults = {
         id: faker.string.uuid(),
         username: faker.internet.displayName(),
@@ -22,7 +22,7 @@ function createClient(vals = {}) {
 /**
  * Fake order
 */
-function createOrder(vals = {}) { 
+module.exports.createOrder = async (vals = {}) => { 
     const defaults = {
         id: faker.string.uuid(), 
         clientId: faker.string.uuid(), 
@@ -33,5 +33,3 @@ function createOrder(vals = {}) {
 
     return new Order ({ ...defaults, ...vals});
 };
-
-export { createClient, createOrder };

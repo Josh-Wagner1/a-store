@@ -1,10 +1,3 @@
-import { createClient, createOrder } from "./fakerFactory.js";
-
-const client = createClient();
-const order = createOrder();
-console.log(client);
-console.log(order);
-
 // Old python stack algorithm converted into JS
 class StackFrontier {
     constructor() {
@@ -65,3 +58,4 @@ class PriorityQueueFrontier extends StackFrontier {
     }
 }
 
+module.exports = new PriorityQueueFrontier();

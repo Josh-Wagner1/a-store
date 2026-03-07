@@ -6,6 +6,6 @@ class Order {
         this.total = total;
         this.time = time;
     }
-} 
+}
 
-export { Order };
+module.exports = new Order();
